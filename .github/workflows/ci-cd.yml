@@ -1,4 +1,4 @@
-name: CI/CD Pipeline with Env Variables
+name: Deploy Strapi
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy-strapi:
     runs-on: self-hosted
     environment: production
 
@@ -82,4 +82,4 @@ jobs:
 
       # Step 8: Restart pm2
       - name: Restart pm2
-        run: pm2 restart sunday-solar-strapi
+        run: pm2 restart strapi
