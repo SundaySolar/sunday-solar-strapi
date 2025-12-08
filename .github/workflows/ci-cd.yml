@@ -46,25 +46,24 @@ jobs:
           echo "DATABASE_HOST=${{ vars.DATABASE_HOST }}" >> .env
           echo "DATABASE_PORT=${{ vars.DATABASE_PORT }}" >> .env
           echo "DATABASE_NAME=${{ vars.DATABASE_NAME }}" >> .env
-          echo "DATABASE_USERNAME=${{ vars.DATABASE_USERNAME }}" >> .env
-          echo "DATABASE_PASSWORD=${{ vars.DATABASE_PASSWORD }}" >> .env
+          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
+          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
           echo "DATABASE_SSL=${{ vars.DATABASE_SSL }}" >> .env
           echo "DATABASE_FILENAME=${{ vars.DATABASE_FILENAME }}" >> .env
           echo "JWT_SECRET=${{ vars.JWT_SECRET }}" >> .env
           echo "SMTP_PORT=${{ vars.SMTP_PORT }}" >> .env
           echo "SMTP_SECURE=${{ vars.SMTP_SECURE }}" >> .env
           echo "SMTP_USERNAME=${{ vars.SMTP_USERNAME }}" >> .env
-          echo "SMTP_PASSWORD=${{ vars.SMTP_PASSWORD }}" >> .env
+          echo "SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}" >> .env
           echo "DEFAULT_TO_EMAIL=${{ vars.DEFAULT_TO_EMAIL }}" >> .env
           echo "DEFAULT_FROM_EMAIL=${{ vars.DEFAULT_FROM_EMAIL }}" >> .env
-          echo "STRAPI_BACKUP_PASSWORD=${{ vars.STRAPI_BACKUP_PASSWORD }}" >> .env
+          echo "STRAPI_BACKUP_PASSWORD=${{ secrets.STRAPI_BACKUP_PASSWORD }}" >> .env
           echo "BACKUP_BUCKET_NAME=${{ vars.BACKUP_BUCKET_NAME }}" >> .env
-          echo "SERVICE_ACCOUNT_PROJECT_ID=${{ vars.SERVICE_ACCOUNT_PROJECT_ID }}" >> .env
-          echo "SERVICE_ACCOUNT_PRIVATE_KEY_ID=${{ vars.SERVICE_ACCOUNT_PRIVATE_KEY_ID }}" >> .env
-          printf 'SERVICE_ACCOUNT_PRIVATE_KEY="%s"\n' "${{ vars.SERVICE_ACCOUNT_PRIVATE_KEY }}" >> .env
-          echo "SERVICE_ACCOUNT_CLIENT_EMAIL=${{ vars.SERVICE_ACCOUNT_CLIENT_EMAIL }}" >> .env
-          echo "SERVICE_ACCOUNT_CLIENT_ID=${{ vars.SERVICE_ACCOUNT_CLIENT_ID }}" >> .env
-          
+          echo "SERVICE_ACCOUNT_PROJECT_ID=${{ secrets.SERVICE_ACCOUNT_PROJECT_ID }}" >> .env
+          echo "SERVICE_ACCOUNT_PRIVATE_KEY_ID=${{ secrets.SERVICE_ACCOUNT_PRIVATE_KEY_ID }}" >> .env
+          printf 'SERVICE_ACCOUNT_PRIVATE_KEY="%s"\n' "${{ secrets.SERVICE_ACCOUNT_PRIVATE_KEY }}" >> .env
+          echo "SERVICE_ACCOUNT_CLIENT_EMAIL=${{ secrets.SERVICE_ACCOUNT_CLIENT_EMAIL }}" >> .env
+          echo "SERVICE_ACCOUNT_CLIENT_ID=${{ secrets.SERVICE_ACCOUNT_CLIENT_ID }}" >> .env
 
       # Step 5: Set up Node.js (or other tools based on your project)
       - name: Set up Node.js
