@@ -7,6 +7,14 @@
   "attributes": {
     "heading1": {
       "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "reonic_script": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reonic-script.reonic-script"
     }
   }
 }

@@ -17,53 +17,60 @@
   },
   "attributes": {
     "heading3": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string"
+      }
     },
     "address": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "text"
+      }
     },
     "phoneNumber": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
       "regex": "^\\+[1-9]{1}[0-9]{3,14}$"
     },
     "linkButton": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.link-button"
+      "component": "shared.link-button",
+      "repeatable": false
     },
     "mapCoordinates": {
-      "displayName": "center",
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.center"
+      "component": "shared.center",
+      "repeatable": false
     },
     "cookieRejectedMessage": {
       "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "email": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true

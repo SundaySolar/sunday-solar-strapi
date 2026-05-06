@@ -12,12 +12,10 @@
     "description": {
       "type": "blocks"
     },
-    "product": {
-      "type": "enumeration",
-      "enum": [
-        "energyhouse",
-        "energycompany"
-      ]
+    "reonic_script": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::reonic-script.reonic-script"
     }
   }
 }

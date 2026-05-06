@@ -1,16 +1,10 @@
 {
-  "collectionName": "components_campaign_configurators",
+  "collectionName": "components_shared_reonics",
   "info": {
-    "displayName": "configurator"
+    "displayName": "Reonic"
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
     "reonic_script": {
       "type": "relation",
       "relation": "oneToOne",
