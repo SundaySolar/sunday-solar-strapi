@@ -65,13 +65,7 @@ jobs:
           echo "SERVICE_ACCOUNT_CLIENT_EMAIL=${{ secrets.SERVICE_ACCOUNT_CLIENT_EMAIL }}" >> .env
           echo "SERVICE_ACCOUNT_CLIENT_ID=${{ secrets.SERVICE_ACCOUNT_CLIENT_ID }}" >> .env
 
-      # Step 5: Set up Node.js (or other tools based on your project)
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-
-      # Step 6: Install dependencies
+      # Step 5: Install dependencies
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
