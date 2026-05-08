@@ -18,24 +18,33 @@
     "@strapi/plugin-users-permissions": "^5.17.0",
     "@strapi/provider-email-nodemailer": "^5.17.0",
     "@strapi/strapi": "^5.17.0",
-    "better-sqlite3": "11.3.0",
-    "fs-extra": "^10.0.0",
-    "mime-types": "^2.1.27",
+    "better-sqlite3": "12.9.0",
+    "fs-extra": "^11.3.4",
+    "mime-types": "^3.0.2",
     "pg": "^8.13.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^7.14.2",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "typescript": "^5"
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^6.0.3"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
+    "node": ">=24.0.0",
     "npm": ">=6.0.0"
+  },
+  "resolutions": {
+    "esbuild": "^0.25.12",
+    "ajv": "^8.20.0",
+    "lodash": "^4.18.1",
+    "vite": "^6.4.2",
+    "uuid": "^14.0.0",
+    "axios": "^1.16.0",
+    "@tootallnate/once": "^3.0.1"
   },
   "strapi": {
     "uuid": "acca6c2e-8c63-45c7-901a-79ec15204340"

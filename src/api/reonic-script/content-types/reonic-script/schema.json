@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reonic_scripts",
+  "info": {
+    "singularName": "reonic-script",
+    "pluralName": "reonic-scripts",
+    "displayName": "Reonic Script"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "uid",
+      "targetField": "",
+      "required": true
+    },
+    "code": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    }
+  }
+}

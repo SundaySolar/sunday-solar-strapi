@@ -16,36 +16,35 @@
     }
   },
   "attributes": {
+    "b2cIntro": {
+      "type": "component",
+      "component": "b2c.b2c-intro",
+      "repeatable": false
+    },
+    "reviews": {
+      "type": "component",
+      "component": "home.review",
+      "repeatable": false
+    },
+    "features": {
+      "type": "component",
+      "component": "product.features",
+      "repeatable": true
+    },
+    "faq": {
+      "type": "component",
+      "component": "home.faq",
+      "repeatable": false
+    },
     "seo": {
       "type": "component",
-      "repeatable": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "shared.seo"
-    },
-    "b2cIntro": {
-      "displayName": "b2cIntro",
-      "type": "component",
-      "repeatable": false,
-      "component": "b2c.b2c-intro"
-    },
-    "reviews": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.review"
-    },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "product.features"
-    },
-    "faq": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.faq"
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

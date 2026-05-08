@@ -1,6 +1,6 @@
 import { spawn } from "child_process";
 import fs from "fs";
-import glob from "glob";
+import { glob } from "glob";
 import { Storage } from "@google-cloud/storage";
 
 async function uploadFile(filename: string) {
@@ -55,43 +55,25 @@ function runCommandWithInput() {
   });
 }
 
-function removePrevBackups() {
-  return new Promise((resolve, reject) => {
-    glob("export_*.tar.gz.enc", (err, files) => {
-      if (err) {
-        reject(err);
-        console.error("Error finding files:", err);
-        return;
-      }
-
-      files.forEach((file) => {
-        try {
-          fs.unlinkSync(file);
-          console.log(`Deleted: ${file}`);
-        } catch (err) {
-          reject(err);
-        }
-      });
-      resolve(true);
-    });
+async function removePrevBackups() {
+  const files = await glob("export_*.tar.gz.enc");
+  files.forEach((file) => {
+    try {
+      fs.unlinkSync(file);
+      console.log(`Deleted: ${file}`);
+    } catch (err) {
+      console.error("Error deleting file:", err);
+      throw err;
+    }
   });
 }
 
-function findLatestBackup() {
-  return new Promise<string>((resolve, reject) => {
-    glob("export_*.tar.gz.enc", (err, files) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-
-      if (files.length > 0) {
-        resolve(files[0]);
-      } else {
-        reject(new Error("No files found!"));
-      }
-    });
-  });
+async function findLatestBackup(): Promise<string> {
+  const files = await glob("export_*.tar.gz.enc");
+  if (files.length > 0) {
+    return files[0];
+  }
+  throw new Error("No files found!");
 }
 
 async function getBackup() {
