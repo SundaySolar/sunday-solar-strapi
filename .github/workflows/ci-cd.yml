@@ -66,6 +66,15 @@ jobs:
           echo "SERVICE_ACCOUNT_CLIENT_ID=${{ secrets.SERVICE_ACCOUNT_CLIENT_ID }}" >> .env
 
       # Step 5: Install dependencies
+      - name: Debug PATH
+        run: |
+          echo "PATH: $PATH"
+          which node || echo "node not found"
+          which npm || echo "npm not found"
+          which yarn || echo "yarn not found"
+          node --version || echo "node version failed"
+          npm --version || echo "npm version failed"
+
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
