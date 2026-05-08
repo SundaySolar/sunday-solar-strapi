@@ -9,9 +9,6 @@ jobs:
   deploy-strapi:
     runs-on: self-hosted
     environment: production
-    defaults:
-      run:
-        shell: zsh -l {0}
 
     steps:
       # Step 1: Backup assets
