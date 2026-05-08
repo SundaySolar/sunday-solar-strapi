@@ -9,8 +9,9 @@ jobs:
   deploy-strapi:
     runs-on: self-hosted
     environment: production
-    env:
-      PATH: /home/runner/.nvm/versions/node/v24.15.0/bin/node
+    defaults:
+      run:
+        shell: zsh -l {0}
 
     steps:
       # Step 1: Backup assets
